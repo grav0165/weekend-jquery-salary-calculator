@@ -9,7 +9,8 @@ function onReady(){
 
 function salarySubmission() {
     event.preventDefault();
-    console.log('Salary Submission button clicked');
+    console.log('Salary Submission button clicked'); // tracking button click to confirm function working
+    
 }
 
 // Create function to take in 5 pieces of information in 5 different text boxes
