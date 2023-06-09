@@ -10,41 +10,69 @@
     <title>Salary Calculator</title>
 </head>
 <body>
-<!--Title of 'Salary Calculator'-->
-<h1>Salary Calculator</h1>
-<!--Five different input boxes-->
+    <header>
+        <h1>Salary Calculator</h1>
+    </header>
+<main>
+    <!--Title of 'Salary Calculator'-->
+    <h1>Add Employee</h1>
+    <!--Five different input boxes-->
     <!--add id labels to each input box-->
-<form>
-    <input
-        placeholder="First Name"
-        input="text"
-        id="first-name-input"
-    >
-    <input
-        placeholder="Last Name"
-        input="text"
-        id="last-name-input"
-    >
-    <input
-        placeholder="ID"
-        input="text"
-        id="idInput"
-    >
-    <input
-        placeholder="Title"
-        input="text"
-        id="title-input"
-    >
-    <input
-        placeholder="Annual Salary"
-        input="text"
-        id="annua-salary-input"
-    >
-    <!-- submit button-->
-    <!--right align on different line submit button-->
-    <button id="submit-button">Submit</button>
-</form>
+    <section>
+        <form>
+            <input
+                placeholder="First Name"
+                input="text"
+                id="first-name-input"
+            >
+            <input
+                placeholder="Last Name"
+                input="text"
+                id="last-name-input"
+            >
+            <input
+                placeholder="ID"
+                input="text"
+                id="idInput"
+            >
+            <input
+                placeholder="Title"
+                input="text"
+                id="title-input"
+            >
+            <input
+                placeholder="Annual Salary"
+                input="text"
+                id="annual-salary-input"
+            >
+            <!-- submit button-->
+            <!--right align on different line submit button-->
+            <button id="submit-button">Submit</button>
+        </form>
+    </section>
+    <section>
+            <h3>Employees</h3>
+          
+            <table>
+                <thead>
+                    <tr>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>ID</th>
+                        <th>Title</th>
+                        <th>Annual Salary</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody id="employeesTable"></tbody>
+            </table>
+    </section>
+    <section class="total-monthly-salary">
+        <h3>Total Monthly</h3>
+    </section>
+   
 
+</main>
 
 
 <!--'Employees' title-->

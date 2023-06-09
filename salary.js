@@ -3,6 +3,13 @@ $(document).ready(onReady);
 let totalSalaries
 function onReady(){
 
+    $('#submit-button').on('click', salarySubmission);
+
+}
+
+function salarySubmission() {
+    event.preventDefault();
+    console.log('Salary Submission button clicked');
 }
 
 // Create function to take in 5 pieces of information in 5 different text boxes
