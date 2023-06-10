@@ -11,16 +11,20 @@ let formatedSalaries=0;
 let formatedTotal=0;
 function onReady(){
 
+    // Hey JQuery, on click, do salary submission function
     $("#submit-button").on("click", salarySubmission);
-
+    
+    // Hey JQuery, on click, do salary deletion function
     $("#employees-table").on("click", ".delete-button", deleteEntry);
 
 }
 
 function salarySubmission(event) {
+    // preventdefault used to prevent HTML from reloading page
     event.preventDefault();
     console.log('Salary Submission button clicked'); // tracking button click to confirm function working
 
+    // taking field input information and put into variables to process
     fname=$("#first-name-input").val();
     lname=$("#last-name-input").val();
     idInput=$("#idBoxInput").val();
@@ -31,6 +35,7 @@ function salarySubmission(event) {
         currency: 'USD',
     }).format(salaryInput));
 
+    // console log variables to confirm receiving input
     // console logging to confirm input received
     // console.log("name input,", fname);
     // console.log("Last name input,", lname);
@@ -45,6 +50,7 @@ function salarySubmission(event) {
     $("#title-input").val('');
     $("#annual-salary-input").val('');
 
+    // if statement added to check that all fields must have an input to accept
     if(fname && lname && idInput && titleInput && salaryInput){
         $('#employees-table').append(`
             <tr>
@@ -87,9 +93,11 @@ function deleteEntry() {
 
     //converting currency amount back to raw number
     let converted = Number(rawSalary.replace(/[^0-9\.-]+/g,"")/12)
-    console.log(converted)
+    // console.log(converted)
+
+    // removing from total salaries amount
     totalSalaries -= converted;
-    console.log(totalSalaries)
+    // console.log(totalSalaries)
 
     // format the raw number to a Currency format $$
     formatedTotal = new Intl.NumberFormat('en-US', {
@@ -97,7 +105,7 @@ function deleteEntry() {
         currency: 'USD',
     }).format(totalSalaries);
 
-    console.log(formatedTotal);
+    // console.log(formatedTotal);
 
     // write to bottom of page after removing
     $('#total-monthly-salaries').text(formatedTotal)
