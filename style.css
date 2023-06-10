@@ -19,6 +19,10 @@ footer {
     text-align: center;
 }
 
+main h1 {
+  margin-left: 0.5em;
+}
+
 #submit-button {
   border-radius: 5px;
   border: 2px solid #0F0A0A;
@@ -27,6 +31,14 @@ footer {
 .button-item {
   text-align: right;
   margin-right: 5em;
+}
+
+#first-name-input {
+  margin-left: 1em;
+}
+
+.table-section {
+  margin-left: 2em;
 }
 
 form input{
@@ -38,31 +50,35 @@ form input{
   margin-right: 5em;
 }
 
-
-
-/* Table Elements */
 table {
-    width: 100%;
+    width: 85%;
     text-align: left;
-  }
-  table, th, td {
     border: 0.5px solid black;
     border-collapse: collapse;
-    height: 2em;
   }
+  
   th, td {
+    border: 1px solid #0F0A0A;
+    height: 1em;
     padding: .5em;
     min-width: 3.5em;
   }
+
   thead {
     background: #2292A4;
     color: #fcfcfc;
   }
+
   tbody tr:nth-child(odd){ 
-    background: #fcfcfc;
+    background: #F5EFED;
   }
+
+  tbody tr:last-child{
+    text-align: center;
+  }
+
   tbody tr:nth-child(even){
-    background: #dcdcdc;
+    background: #BDBF09;
   }
   
 #footer-table {

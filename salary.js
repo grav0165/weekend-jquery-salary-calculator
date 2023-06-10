@@ -71,6 +71,8 @@ function salarySubmission(event) {
         style: 'currency',
         currency: 'USD',
     }).format(totalSalaries);
+
+    // write to page
     $('#total-monthly-salaries').text(formatedTotal)
 
 }
@@ -82,17 +84,30 @@ function deleteEntry() {
     // in order to manupilate the DOM's total monthly amount
     let rawSalary = $(this).parent().siblings().last().text()
     console.log(rawSalary)
-    //converting currency amount back to raw number
-    let converted = Number(rawSalary.replace(/[^0-9\.-]+/g,""))
-    console.log(converted)
-    formatedTotal -= converted;
-    console.log(formatedTotal)
 
+    //converting currency amount back to raw number
+    let converted = Number(rawSalary.replace(/[^0-9\.-]+/g,"")/12)
+    console.log(converted)
+    totalSalaries -= converted;
+    console.log(totalSalaries)
+
+    // format the raw number to a Currency format $$
+    formatedTotal = new Intl.NumberFormat('en-US', {
+        style: 'currency',
+        currency: 'USD',
+    }).format(totalSalaries);
+
+    console.log(formatedTotal);
+
+    // write to bottom of page after removing
+    $('#total-monthly-salaries').text(formatedTotal)
+
+    // deletes the row of table of the button clicked
+    $(this).parent().parent().remove();
 
 }
 
 
-let t_row = $(this).parent().parent()
 
 // Create function to take in 5 pieces of information in 5 different text boxes
     // format the information (such as salary having $ in front)
