@@ -11,6 +11,8 @@ function onReady(){
 
     $("#submit-button").on("click", salarySubmission);
 
+    $("#employees-table").on("click", ".delete-button", deleteEntry);
+
 }
 
 function salarySubmission(event) {
@@ -52,6 +54,10 @@ function salarySubmission(event) {
         console.log("Missing data in input field(s)")
     }
 
+}
+
+function deleteEntry() {
+    console.log('Delete Entry button clicked!')
 }
 
 // Create function to take in 5 pieces of information in 5 different text boxes
