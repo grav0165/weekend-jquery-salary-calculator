@@ -8,6 +8,7 @@ let titleInput="";
 let salaryInput="";
 let totalSalaries=0;
 let formatedSalaries=0;
+let formatedTotal=0;
 function onReady(){
 
     $("#submit-button").on("click", salarySubmission);
@@ -25,10 +26,10 @@ function salarySubmission(event) {
     idInput=$("#idBoxInput").val();
     titleInput=$("#title-input").val();
     salaryInput=$("#annual-salary-input").val();
-    salaryFormatted=new Intl.NumberFormat('en-US', {
+    salaryFormatted=(new Intl.NumberFormat('en-US', {
         style: 'currency',
         currency: 'USD',
-    }).format(salaryInput);
+    }).format(salaryInput));
 
     // console logging to confirm input received
     // console.log("name input,", fname);
@@ -58,27 +59,40 @@ function salarySubmission(event) {
     } else {
         console.log("Missing data in input field(s)")
     }
-    totalSalaries += Number(salaryInput) // console.log to confirm receive salary information
+
+    // method to convert annual salary to monthly salary costs
+    totalSalaries += Number(salaryInput/12) 
+
+    // console.log to confirm receive salary information
     console.log(totalSalaries)
-    formatedSalaries = new Intl.NumberFormat('en-US', {
+
+    // formating number to currency $$ 
+    formatedTotal = new Intl.NumberFormat('en-US', {
         style: 'currency',
         currency: 'USD',
     }).format(totalSalaries);
-    $('#total-monthly-salaries').text(totalSalaries)
+    $('#total-monthly-salaries').text(formatedTotal)
 
 }
 
 function deleteEntry() {
     console.log('Delete Entry button clicked!')
-    
-    
-    $(this).parent().parent().remove();
+
     // I want to access the Annual Salary information
     // in order to manupilate the DOM's total monthly amount
+    let rawSalary = $(this).parent().siblings().last().text()
+    console.log(rawSalary)
+    //converting currency amount back to raw number
+    let converted = Number(rawSalary.replace(/[^0-9\.-]+/g,""))
+    console.log(converted)
+    formatedTotal -= converted;
+    console.log(formatedTotal)
 
-    // totalSalaries -= $(this.annual-salary-item).siblings()
-    // console.log(totalSalaries)
+
 }
+
+
+let t_row = $(this).parent().parent()
 
 // Create function to take in 5 pieces of information in 5 different text boxes
     // format the information (such as salary having $ in front)

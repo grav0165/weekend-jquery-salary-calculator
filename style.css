@@ -6,8 +6,8 @@ body {
 header {
     height: 6em;
     align-items:center;
-    background-color: #DE9E36;
-    color: #37323E;
+    background-color: #D96C06;
+    color: #0F0A0A;
     text-align: center;
     display:flex;
     justify-content: center;
@@ -15,15 +15,28 @@ header {
 
 footer {
     height: 6em;
-    background-color: #DE9E36;
+    background-color: #D96C06;
     text-align: center;
 }
 
-main {
-    flex:auto;
-    margin: auto;
+#submit-button {
+  border-radius: 5px;
+  border: 2px solid #0F0A0A;
 }
 
+.button-item {
+  text-align: right;
+  margin-right: 5em;
+}
+
+form input{
+  border-radius: 15px;
+}
+
+.total-monthly p {
+  text-align: right;
+  margin-right: 5em;
+}
 
 
 
@@ -33,16 +46,16 @@ table {
     text-align: left;
   }
   table, th, td {
-    border: 1px solid black;
+    border: 0.5px solid black;
     border-collapse: collapse;
-    height: 2.15em;
+    height: 2em;
   }
   th, td {
     padding: .5em;
     min-width: 3.5em;
   }
   thead {
-    background: #7a7a7a;
+    background: #2292A4;
     color: #fcfcfc;
   }
   tbody tr:nth-child(odd){ 
@@ -54,7 +67,7 @@ table {
   
 #footer-table {
     background: #e0dce8;
-    border: 1px solid black;
+    border: 0.5px solid black;
     border-collapse: collapse;
   }
   
