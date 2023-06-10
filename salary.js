@@ -9,11 +9,11 @@ let salaryInput="";
 let totalSalaries
 function onReady(){
 
-    $('#submit-button').on('click', salarySubmission);
+    $("#submit-button").on("click", salarySubmission);
 
 }
 
-function salarySubmission() {
+function salarySubmission(event) {
     event.preventDefault();
     console.log('Salary Submission button clicked'); // tracking button click to confirm function working
 
@@ -45,12 +45,12 @@ function salarySubmission() {
                 <td>${idInput}</td>
                 <td>${titleInput}</td>
                 <td>${salaryInput}</td>
+                <td><button class="delete-button">Delete</button></td>
             </tr>
         `)
+    } else {
+        console.log("Missing data in input field(s)")
     }
-
-    
-
 
 }
 
