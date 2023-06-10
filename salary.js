@@ -30,6 +30,27 @@ function salarySubmission() {
     // console.log("title input,", titleInput);
     // console.log("Salary input,", salaryInput);
 
+    // return text boxes to empty after submission
+    $("#first-name-input").val('');
+    $("#last-name-input").val('');
+    $("#idBoxInput").val('');
+    $("#title-input").val('');
+    $("#annual-salary-input").val('');
+
+    if(fname && lname && idInput && titleInput && salaryInput){
+        $('#employees-table').append(`
+            <tr>
+                <td>${fname}</td>
+                <td>${lname}</td>
+                <td>${idInput}</td>
+                <td>${titleInput}</td>
+                <td>${salaryInput}</td>
+            </tr>
+        `)
+    }
+
+    
+
 
 }
 
