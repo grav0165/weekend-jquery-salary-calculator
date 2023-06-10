@@ -6,7 +6,8 @@ let lname ="";
 let idInput="";
 let titleInput="";
 let salaryInput="";
-let totalSalaries
+let totalSalaries=0;
+let formatedSalaries=0;
 function onReady(){
 
     $("#submit-button").on("click", salarySubmission);
@@ -50,19 +51,33 @@ function salarySubmission(event) {
                 <td>${lname}</td>
                 <td>${idInput}</td>
                 <td>${titleInput}</td>
-                <td>${salaryFormatted}</td>
+                <td class="annual-salary-item">${salaryFormatted}</td>
                 <td><button class="delete-button">Delete</button></td>
             </tr>
         `)
     } else {
         console.log("Missing data in input field(s)")
     }
+    totalSalaries += Number(salaryInput) // console.log to confirm receive salary information
+    console.log(totalSalaries)
+    formatedSalaries = new Intl.NumberFormat('en-US', {
+        style: 'currency',
+        currency: 'USD',
+    }).format(totalSalaries);
+    $('#total-monthly-salaries').text(totalSalaries)
 
 }
 
 function deleteEntry() {
     console.log('Delete Entry button clicked!')
+    
+    
     $(this).parent().parent().remove();
+    // I want to access the Annual Salary information
+    // in order to manupilate the DOM's total monthly amount
+
+    // totalSalaries -= $(this.annual-salary-item).siblings()
+    // console.log(totalSalaries)
 }
 
 // Create function to take in 5 pieces of information in 5 different text boxes
