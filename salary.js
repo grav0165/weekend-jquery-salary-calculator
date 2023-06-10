@@ -24,6 +24,10 @@ function salarySubmission(event) {
     idInput=$("#idBoxInput").val();
     titleInput=$("#title-input").val();
     salaryInput=$("#annual-salary-input").val();
+    salaryFormatted=new Intl.NumberFormat('en-US', {
+        style: 'currency',
+        currency: 'USD',
+    }).format(salaryInput);
 
     // console logging to confirm input received
     // console.log("name input,", fname);
@@ -46,7 +50,7 @@ function salarySubmission(event) {
                 <td>${lname}</td>
                 <td>${idInput}</td>
                 <td>${titleInput}</td>
-                <td>${salaryInput}</td>
+                <td>${salaryFormatted}</td>
                 <td><button class="delete-button">Delete</button></td>
             </tr>
         `)
@@ -58,6 +62,7 @@ function salarySubmission(event) {
 
 function deleteEntry() {
     console.log('Delete Entry button clicked!')
+    $(this).parent().parent().remove();
 }
 
 // Create function to take in 5 pieces of information in 5 different text boxes

@@ -1,3 +1,33 @@
+body {
+    background-color: #BFBDC1;
+    margin: auto;
+}
+
+header {
+    height: 6em;
+    align-items:center;
+    background-color: #DE9E36;
+    color: #37323E;
+    text-align: center;
+    display:flex;
+    justify-content: center;
+}
+
+footer {
+    height: 6em;
+    background-color: #DE9E36;
+    text-align: center;
+}
+
+main {
+    flex:auto;
+    margin: auto;
+}
+
+
+
+
+/* Table Elements */
 table {
     width: 100%;
     text-align: left;
@@ -8,8 +38,8 @@ table {
     height: 2.15em;
   }
   th, td {
-    padding: 2px;
-    min-width: 3em;
+    padding: .5em;
+    min-width: 3.5em;
   }
   thead {
     background: #7a7a7a;
@@ -21,9 +51,10 @@ table {
   tbody tr:nth-child(even){
     background: #dcdcdc;
   }
-
-  .total-monthly-salary {
-    text-align: right;
-    padding-right: 4em;
+  
+#footer-table {
+    background: #e0dce8;
+    border: 1px solid black;
+    border-collapse: collapse;
   }
   
