@@ -1,9 +1,7 @@
-# Project Name
+## Salary Calculator Webpage
 
-[Project Instructions](./INSTRUCTIONS.md), this line may be removed once you have updated the README.md
+## Salary input function to track employees
 
-## Description
+This project is to track employee identifying information, as well as current annual salary, and keep a running monthly total of employee operating costs.
 
-Your project description goes here. What problem did you solve? How did you solve it?
-
-Additional README details can be found [here](https://github.com/PrimeAcademy/readme-template/blob/master/README.md).
+The scope of this is in Javascript, JQuery, function building, simple input logic, number conversion, and basic CSS manipulation.
