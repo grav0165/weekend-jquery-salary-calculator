@@ -81,6 +81,10 @@ function salarySubmission(event) {
     // write to page
     $('#total-monthly-salaries').text(formatedTotal)
 
+    if (totalSalaries > 20000) {
+        document.body.style.backgroundColor = "red";
+      }
+
 }
 
 function deleteEntry() {
